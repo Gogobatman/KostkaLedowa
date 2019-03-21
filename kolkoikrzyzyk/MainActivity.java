@@ -214,17 +214,24 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            messages=new StringBuilder(); //DZIEKI TEMU NIE MASZ CALY CZAS DODAWANEGO!!!1
-            String text= intent.getStringExtra("the message"); //ten intent chyba gromadzi
-            messages.append(text);
-            textView.setText(messages.toString());
-             if(messages.toString()=="111"){
-                MainActivity.radiobutton[1][1][1].setBackgroundColor(Color.RED);
-                macierz[1][1][1]='R';
+            //messages=new StringBuilder(); //DZIEKI TEMU NIE MASZ CALY CZAS DODAWANEGO!!!1
+            String text= intent.getStringExtra("the message"); //ten pobiera jeden ciag znakow, ktory mozna dodawac do siebie w StringBuilderze
+            //messages.append(text);
+            textView.setText(text);
+             if(text=="000"){ //wymiar xyz
+                radiobutton[0][0][0].setBackgroundColor(Color.BLACK); //wymiary zyx
+                macierz[0][0][0]='R';
+             }else if(text=="001"){
+                radiobutton[1][0][0].setBackgroundColor(Color.BLACK);
+                macierz[1][0][0]='R';
+            }else if(text=="002") {
+                 radiobutton[2][0][0].setBackgroundColor(Color.BLACK);
+                 macierz[2][0][0] = 'R';
              }
-            else{
-               MainActivity.radiobutton[1][1][1].setBackgroundColor(Color.BLUE);
-            }
+            else {
+                 radiobutton[3][2][1].setBackgroundColor(Color.BLACK);
+
+             }
         }
     };
     public void startConnection(){
@@ -396,7 +403,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                                     String temp1=Integer.toString(x);
                                     String temp2=Integer.toString(y);
                                     String temp3=Integer.toString(z);
-                                    String string = (temp1+temp2+temp3);
+                                    String string = (temp3+temp2+temp1);
                                     byte[] bytes = string.getBytes(Charset.defaultCharset());
                                     mBluetoothConnection.write(bytes);
                                     if (tura % 3 == 0) {
