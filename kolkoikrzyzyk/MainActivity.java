@@ -71,6 +71,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     boolean wygrana = false;
     int tura = 0;
+    int kolor=Color.RED;
+    char litera='R';
     private CountDownTimer timer;
     int czas = 0;
     long timerLeft = 600000;
@@ -218,20 +220,250 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             String text= intent.getStringExtra("the message"); //ten pobiera jeden ciag znakow, ktory mozna dodawac do siebie w StringBuilderze
             //messages.append(text);
             textView.setText(text);
-             if(text=="000"){ //wymiar xyz
-                radiobutton[0][0][0].setBackgroundColor(Color.BLACK); //wymiary zyx
-                macierz[0][0][0]='R';
-             }else if(text=="001"){
-                radiobutton[1][0][0].setBackgroundColor(Color.BLACK);
-                macierz[1][0][0]='R';
-            }else if(text=="002") {
-                 radiobutton[2][0][0].setBackgroundColor(Color.BLACK);
-                 macierz[2][0][0] = 'R';
-             }
-            else {
-                 radiobutton[3][2][1].setBackgroundColor(Color.BLACK);
+            //int numer = text.length();
+            if(text.equals("reset")){
+                reset();
+                tura++; //mała latka do kodu ktorej nie rozumiem ale dziala
+            }
+            else if(tura%2==0){
+                kolor = Color.RED;
+                litera = 'R';
+            }
+            else if(tura%2==1){
+                kolor = Color.GREEN;
+                litera = 'G';
+            }
 
+             if(text.equals("000")){ //wymiar xyz
+                radiobutton[0][0][0].setBackgroundColor(kolor); //wymiary zyx
+                macierz[0][0][0]=litera;
+             }else if(text.equals("001")){
+                radiobutton[1][0][0].setBackgroundColor(kolor);
+                macierz[1][0][0]=litera;
+            }else if(text.equals("002")) {
+                 radiobutton[2][0][0].setBackgroundColor(kolor);
+                 macierz[2][0][0] = litera;
+             }else if(text.equals("003")) {
+                 radiobutton[3][0][0].setBackgroundColor(kolor);
+                 macierz[3][0][0] = litera;
              }
+
+            else if(text.equals("010")){ //wymiar xyz
+                radiobutton[0][1][0].setBackgroundColor(kolor); //wymiary zyx
+                macierz[0][1][0]=litera;
+            }else if(text.equals("011")){
+                radiobutton[1][1][0].setBackgroundColor(kolor);
+                macierz[1][1][0]=litera;
+            }else if(text.equals("012")) {
+                radiobutton[2][1][0].setBackgroundColor(kolor);
+                macierz[2][1][0] = litera;
+            }else if(text.equals("013")) {
+                radiobutton[3][1][0].setBackgroundColor(kolor);
+                macierz[3][1][0] = litera;
+            }
+
+             else if(text.equals("020")){ //wymiar xyz
+                 radiobutton[0][2][0].setBackgroundColor(kolor); //wymiary zyx
+                 macierz[0][2][0]=litera;
+             }else if(text.equals("021")){
+                 radiobutton[1][2][0].setBackgroundColor(kolor);
+                 macierz[1][2][0]=litera;
+             }else if(text.equals("022")) {
+                 radiobutton[2][2][0].setBackgroundColor(kolor);
+                 macierz[2][2][0] = litera;
+             }else if(text.equals("023")) {
+                 radiobutton[3][2][0].setBackgroundColor(kolor);
+                 macierz[3][2][0] = litera;
+             }
+
+             else if(text.equals("030")){ //wymiar xyz
+                 radiobutton[0][3][0].setBackgroundColor(kolor); //wymiary zyx
+                 macierz[0][3][0]=litera;
+             }else if(text.equals("031")){
+                 radiobutton[1][3][0].setBackgroundColor(kolor);
+                 macierz[1][3][0]=litera;
+             }else if(text.equals("032")) {
+                 radiobutton[2][3][0].setBackgroundColor(kolor);
+                 macierz[2][3][0] = litera;
+             }else if(text.equals("033")) {
+                 radiobutton[3][3][0].setBackgroundColor(kolor);
+                 macierz[3][3][0] = litera;
+             }
+
+
+
+            else if(text.equals("100")){ //wymiar xyz
+                radiobutton[0][0][1].setBackgroundColor(kolor); //wymiary zyx
+                macierz[0][0][1]=litera;
+            }else if(text.equals("101")){
+                radiobutton[1][0][1].setBackgroundColor(kolor);
+                macierz[1][0][1]=litera;
+            }else if(text.equals("102")) {
+                radiobutton[2][0][1].setBackgroundColor(kolor);
+                macierz[2][0][1] = litera;
+            }else if(text.equals("103")) {
+                radiobutton[3][0][1].setBackgroundColor(kolor);
+                macierz[3][0][1] = litera;
+            }
+
+            else if(text.equals("110")){ //wymiar xyz
+                radiobutton[0][1][1].setBackgroundColor(kolor); //wymiary zyx
+                macierz[0][1][1]=litera;
+            }else if(text.equals("111")){
+                radiobutton[1][1][1].setBackgroundColor(kolor);
+                macierz[1][1][1]=litera;
+            }else if(text.equals("112")) {
+                radiobutton[2][1][1].setBackgroundColor(kolor);
+                macierz[2][1][1] = litera;
+            }else if(text.equals("113")) {
+                radiobutton[3][1][1].setBackgroundColor(kolor);
+                macierz[3][1][1] = litera;
+            }
+
+            else if(text.equals("120")){ //wymiar xyz
+                radiobutton[0][2][1].setBackgroundColor(kolor); //wymiary zyx
+                macierz[0][2][1]=litera;
+            }else if(text.equals("121")){
+                radiobutton[1][2][1].setBackgroundColor(kolor);
+                macierz[1][2][1]=litera;
+            }else if(text.equals("122")) {
+                radiobutton[2][2][1].setBackgroundColor(kolor);
+                macierz[2][2][1] = litera;
+            }else if(text.equals("123")) {
+                radiobutton[3][2][1].setBackgroundColor(kolor);
+                macierz[3][2][1] = litera;
+            }
+
+            else if(text.equals("130")){ //wymiar xyz
+                radiobutton[0][3][1].setBackgroundColor(kolor); //wymiary zyx
+                macierz[0][3][1]=litera;
+            }else if(text.equals("131")){
+                radiobutton[1][3][1].setBackgroundColor(kolor);
+                macierz[1][3][1]=litera;
+            }else if(text.equals("132")) {
+                radiobutton[2][3][1].setBackgroundColor(kolor);
+                macierz[2][3][1] = litera;
+            }else if(text.equals("133")) {
+                radiobutton[3][3][1].setBackgroundColor(kolor);
+                macierz[3][3][1] = litera;
+            }
+
+
+             else if(text.equals("200")){ //wymiar xyz
+                 radiobutton[0][0][2].setBackgroundColor(kolor); //wymiary zyx
+                 macierz[0][0][2]=litera;
+             }else if(text.equals("201")){
+                 radiobutton[1][0][2].setBackgroundColor(kolor);
+                 macierz[1][0][2]=litera;
+             }else if(text.equals("202")) {
+                 radiobutton[2][0][2].setBackgroundColor(kolor);
+                 macierz[2][0][2] = litera;
+             }else if(text.equals("203")) {
+                 radiobutton[3][0][2].setBackgroundColor(kolor);
+                 macierz[3][0][2] = litera;
+             }
+
+             else if(text.equals("210")){ //wymiar xyz
+                 radiobutton[0][1][2].setBackgroundColor(kolor); //wymiary zyx
+                 macierz[0][1][2]=litera;
+             }else if(text.equals("211")){
+                 radiobutton[1][1][2].setBackgroundColor(kolor);
+                 macierz[1][1][2]=litera;
+             }else if(text.equals("212")) {
+                 radiobutton[2][1][2].setBackgroundColor(kolor);
+                 macierz[2][1][2] = litera;
+             }else if(text.equals("213")) {
+                 radiobutton[3][1][2].setBackgroundColor(kolor);
+                 macierz[3][1][2] = litera;
+             }
+
+             else if(text.equals("220")){ //wymiar xyz
+                 radiobutton[0][2][2].setBackgroundColor(kolor); //wymiary zyx
+                 macierz[0][2][2]=litera;
+             }else if(text.equals("221")){
+                 radiobutton[1][2][2].setBackgroundColor(kolor);
+                 macierz[1][2][2]=litera;
+             }else if(text.equals("222")) {
+                 radiobutton[2][2][2].setBackgroundColor(kolor);
+                 macierz[2][2][2] = litera;
+             }else if(text.equals("223")) {
+                 radiobutton[3][2][2].setBackgroundColor(kolor);
+                 macierz[3][2][2] = litera;
+             }
+
+             else if(text.equals("230")){ //wymiar xyz
+                 radiobutton[0][3][2].setBackgroundColor(kolor); //wymiary zyx
+                 macierz[0][3][2]=litera;
+             }else if(text.equals("231")){
+                 radiobutton[1][3][2].setBackgroundColor(kolor);
+                 macierz[1][3][2]=litera;
+             }else if(text.equals("232")) {
+                 radiobutton[2][3][2].setBackgroundColor(kolor);
+                 macierz[2][3][2] = litera;
+             }else if(text.equals("233")) {
+                 radiobutton[3][3][2].setBackgroundColor(kolor);
+                 macierz[3][3][2] = litera;
+             }
+
+             else if(text.equals("300")){ //wymiar xyz
+                 radiobutton[0][0][3].setBackgroundColor(kolor); //wymiary zyx
+                 macierz[0][0][3]=litera;
+             }else if(text.equals("301")){
+                 radiobutton[1][0][3].setBackgroundColor(kolor);
+                 macierz[1][0][3]=litera;
+             }else if(text.equals("302")) {
+                 radiobutton[2][0][3].setBackgroundColor(kolor);
+                 macierz[2][0][3] = litera;
+             }else if(text.equals("303")) {
+                 radiobutton[3][0][3].setBackgroundColor(kolor);
+                 macierz[3][0][3] = litera;
+             }
+
+             else if(text.equals("310")){ //wymiar xyz
+                 radiobutton[0][1][3].setBackgroundColor(kolor); //wymiary zyx
+                 macierz[0][1][3]=litera;
+             }else if(text.equals("311")){
+                 radiobutton[1][1][3].setBackgroundColor(kolor);
+                 macierz[1][1][3]=litera;
+             }else if(text.equals("312")) {
+                 radiobutton[2][1][3].setBackgroundColor(kolor);
+                 macierz[2][1][3] = litera;
+             }else if(text.equals("313")) {
+                 radiobutton[3][1][3].setBackgroundColor(kolor);
+                 macierz[3][1][3] = litera;
+             }
+
+             else if(text.equals("320")){ //wymiar xyz
+                 radiobutton[0][2][3].setBackgroundColor(kolor); //wymiary zyx
+                 macierz[0][2][3]=litera;
+             }else if(text.equals("321")){
+                 radiobutton[1][2][3].setBackgroundColor(kolor);
+                 macierz[1][2][3]=litera;
+             }else if(text.equals("322")) {
+                 radiobutton[2][2][3].setBackgroundColor(kolor);
+                 macierz[2][2][3] = litera;
+             }else if(text.equals("323")) {
+                 radiobutton[3][2][3].setBackgroundColor(kolor);
+                 macierz[3][2][3] = litera;
+             }
+
+             else if(text.equals("330")){ //wymiar xyz
+                 radiobutton[0][3][3].setBackgroundColor(kolor); //wymiary zyx
+                 macierz[0][3][3]=litera;
+             }else if(text.equals("331")){
+                 radiobutton[1][3][3].setBackgroundColor(kolor);
+                 macierz[1][3][3]=litera;
+             }else if(text.equals("332")) {
+                 radiobutton[2][3][3].setBackgroundColor(kolor);
+                 macierz[2][3][3] = litera;
+             }else if(text.equals("333")) {
+                 radiobutton[3][3][3].setBackgroundColor(kolor);
+                 macierz[3][3][3] = litera;
+             }
+            sprawdzCzyWygrana('G');
+            sprawdzCzyWygrana('R');
+            tura++;
+
         }
     };
     public void startConnection(){
@@ -282,17 +514,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                wygrana = false;
-                wyczyscPlansze();
-                textView.setText("Zresetowano rozgrywke");
-                for (int z = 0; z < 4; z++) {
-                    for (int y = 0; y < 4; y++) {
-                        for (int x = 0; x < 4; x++) {
-                            radiobutton[z][y][x].setBackgroundColor(Color.parseColor("#D3D3D3"));
 
-                        }
-                    }
-                }
+                String string = ("reset");
+                byte[] bytes = string.getBytes(Charset.defaultCharset());
+                mBluetoothConnection.write(bytes);
+                reset();
+
             }
         });
         discover.setOnClickListener(new View.OnClickListener() {
@@ -314,6 +541,20 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             }
         });
 
+    }
+    public void reset(){
+        tura=0;
+        wygrana = false;
+        wyczyscPlansze();
+        textView.setText("Zresetowano rozgrywke");
+        for (int z = 0; z < 4; z++) {
+            for (int y = 0; y < 4; y++) {
+                for (int x = 0; x < 4; x++) {
+                    radiobutton[z][y][x].setBackgroundColor(Color.parseColor("#D3D3D3"));
+
+                }
+            }
+        }
     }
     public void btnDiscover() {
         textView.setText("btnDiscover: Looking for unpaired devices.");
@@ -406,26 +647,28 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                                     String string = (temp3+temp2+temp1);
                                     byte[] bytes = string.getBytes(Charset.defaultCharset());
                                     mBluetoothConnection.write(bytes);
-                                    if (tura % 3 == 0) {
+                                    if (tura % 2 == 0) {
                                         radiobutton[x][y][z].setBackgroundColor(Color.parseColor("#FF0000"));
                                         macierz[x][y][z] = 'R';
                                         textView.setText("Gracz R wykonal ruch na polu " + (x + 1) + (y + 1) + (z + 1));
                                         sprawdzCzyWygrana('R');
-                                    } else if (tura % 3 == 1) {
+                                    } else if (tura % 2 == 1) {
                                         radiobutton[x][y][z].setBackgroundColor(Color.parseColor("#00FF00"));
                                         macierz[x][y][z] = 'G';
                                         textView.setText("Gracz G wykonal ruch na polu " + (x + 1) + (y + 1) + (z + 1));
                                         sprawdzCzyWygrana('G');
-                                    } else if (tura % 3 == 2) {
-                                        radiobutton[x][y][z].setBackgroundColor(Color.parseColor("#0000FF"));
-                                        macierz[x][y][z] = 'B';
-                                        textView.setText("Gracz B wykonal ruch na polu " + (x + 1) + (y + 1) + (z + 1));
-                                        sprawdzCzyWygrana('B');
                                     }
-                                    tura++;
+//                                     else if (tura % 3 == 2) {
+//                                        radiobutton[x][y][z].setBackgroundColor(Color.parseColor("#0000FF"));
+//                                        macierz[x][y][z] = 'B';
+//                                        textView.setText("Gracz B wykonal ruch na polu " + (x + 1) + (y + 1) + (z + 1));
+//                                        sprawdzCzyWygrana('B');
+//                                    }
+
                                 } else if (macierz[x][y][z] != ' ') {
                                     textView.setText("pole zajete " + (x + 1) + (y + 1) + (z + 1));
                                 }
+                                tura++;
                                 czas = 0;
                             }
                         }
@@ -436,7 +679,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     for (int y = 0; y < 4; y++) {
                         for (int x = 0; x < 4; x++) {
                             if (v.getId() == idArray[x][y][z]) {
-                                textView.setText("wygrales");
+                                textView.setText("koniec gry");
                             }
                         }
                     }
